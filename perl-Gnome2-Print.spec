@@ -6,7 +6,7 @@
 %define	pnam	Gnome2-Print
 Summary:	Perl interface to the Gnome Print libraries
 Summary(pl):	Interfejs perlowy do bibliotek Gnome Print
-Name:		perl-%{pnam}
+Name:		perl-Print
 Version:	0.91
 Release:	1
 License:	LGPL

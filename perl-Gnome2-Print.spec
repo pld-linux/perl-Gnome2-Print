@@ -4,8 +4,8 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gnome2-Print
-Summary:	Perl interface to the Gnome Print libraries
-Summary(pl):	Interfejs perlowy do bibliotek Gnome Print
+Summary:	Perl interface to the GNOME Print libraries
+Summary(pl):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
 Version:	0.94
 Release:	1
@@ -27,12 +27,12 @@ Requires:	perl-Gtk2 >= 1.021
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The Gnome2 Perl module allows a perl developer to use the Gnome
+The Gnome2::Print Perl module allows a Perl developer to use the GNOME
 Printing libraries with Gtk2-perl.
 
 %description -l pl
-Modu³ Perla Gnome2 umo¿liwia programistom perlowym korzystanie z
-bibliotek Gnome Print wraz z Gtk2-perl.
+Modu³ Perla Gnome2::Print umo¿liwia programistom perlowym korzystanie
+z bibliotek GNOME Print wraz z Gtk2-perl.
 
 %prep
 %setup -q -n %{pnam}-%{version}

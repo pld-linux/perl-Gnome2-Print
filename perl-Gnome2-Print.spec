@@ -60,7 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{perl_vendorarch}/Gnome2/Print.pm
 %dir %{perl_vendorarch}/Gnome2/Print
-%{perl_vendorarch}/Gnome2/Print/*.pm
 %{perl_vendorarch}/Gnome2/Print/Font
 %{perl_vendorarch}/Gnome2/Print/Install
 %dir %{perl_vendorarch}/auto/Gnome2/Print

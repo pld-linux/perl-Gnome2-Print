@@ -7,12 +7,12 @@
 Summary:	Perl interface to the GNOME Print libraries
 Summary(pl):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
-Version:	0.94
-Release:	2
+Version:	0.951
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	03f8830f963da7985f4ab0796cdcfa89
+# Source0-md5:	3684418231786a16ba56a004ca47dfc8
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeprintui-devel >= 2.2

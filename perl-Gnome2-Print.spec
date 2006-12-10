@@ -7,23 +7,24 @@
 Summary:	Perl interface to the GNOME Print libraries
 Summary(pl):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
-Version:	0.951
+Version:	1.000
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	3684418231786a16ba56a004ca47dfc8
+# Source0-md5:	66578c2ffaebbe035a0735e65ad71c3f
 URL:		http://gtk2-perl.sourceforge.net/
-BuildRequires:	gtk+2-devel
-BuildRequires:	libgnomeprintui-devel >= 2.2
-BuildRequires:	perl-Glib >= 1.020
-BuildRequires:	perl-Gnome2
-BuildRequires:	perl-Gtk2 >= 1.021
+BuildRequires:	libgnomeprintui-devel >= 2.2.0
+BuildRequires:	perl-ExtUtils-Depends >= 0.1
+BuildRequires:	perl-ExtUtils-PkgConfig >= 1.03
+BuildRequires:	perl-Glib >= 1.120
+BuildRequires:	perl-Gtk2 >= 1.120
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-Glib >= 1.020
-Requires:	perl-Gtk2 >= 1.021
+Requires:	libgnomeprintui >= 2.2.0
+Requires:	perl-Glib >= 1.120
+Requires:	perl-Gtk2 >= 1.120
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,17 +50,20 @@ z bibliotek GNOME Print wraz z Gtk2-perl.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Print/{,*/}*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc AUTHORS ChangeLog NEWS README
 %{perl_vendorarch}/Gnome2/Print.pm
 %dir %{perl_vendorarch}/Gnome2/Print
+%{perl_vendorarch}/Gnome2/Print/Config
 %{perl_vendorarch}/Gnome2/Print/Font
 %{perl_vendorarch}/Gnome2/Print/Install
 %dir %{perl_vendorarch}/auto/Gnome2/Print

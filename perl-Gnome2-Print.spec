@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	Gnome2-Print
 Summary:	Perl interface to the GNOME Print libraries
-Summary(pl.UTF-8):   Interfejs perlowy do bibliotek GNOME Print
+Summary(pl.UTF-8):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
 Version:	1.000
 Release:	1

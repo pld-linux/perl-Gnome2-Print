@@ -43,6 +43,7 @@ z bibliotek GNOME Print wraz z Gtk2-perl.
 	INSTALLDIRS=vendor
 
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}

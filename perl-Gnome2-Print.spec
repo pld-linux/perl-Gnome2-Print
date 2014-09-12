@@ -69,5 +69,4 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Gnome2/Print/Install
 %dir %{perl_vendorarch}/auto/Gnome2/Print
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Print/*.so
-%{perl_vendorarch}/auto/Gnome2/Print/*.bs
 %{_mandir}/man3/*

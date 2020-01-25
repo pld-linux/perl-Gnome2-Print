@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pnam	Gnome2-Print
 Summary:	Perl interface to the GNOME Print libraries
 Summary(pl.UTF-8):	Interfejs perlowy do bibliotek GNOME Print

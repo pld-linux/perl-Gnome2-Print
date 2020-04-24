@@ -21,6 +21,7 @@ BuildRequires:	perl-Gtk2 >= 1.120
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 Requires:	libgnomeprintui >= 2.2.0
 Requires:	perl-Glib >= 1.120
 Requires:	perl-Gtk2 >= 1.120

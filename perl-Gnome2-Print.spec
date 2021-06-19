@@ -6,18 +6,18 @@
 Summary:	Perl interface to the GNOME Print libraries
 Summary(pl.UTF-8):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
-Version:	1.000
-Release:	17
-License:	LGPL
+Version:	1.001
+Release:	1
+License:	LGPL v2+
 Group:		Development/Languages/Perl
-Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	66578c2ffaebbe035a0735e65ad71c3f
+Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+# Source0-md5:	67ae821c4b7cb9046513a3944cd37e9b
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	libgnomeprintui-devel >= 2.2.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.1
 BuildRequires:	perl-ExtUtils-PkgConfig >= 1.03
-BuildRequires:	perl-Glib >= 1.120
-BuildRequires:	perl-Gtk2 >= 1.120
+BuildRequires:	perl-Glib-devel >= 1.120
+BuildRequires:	perl-Gtk2-devel >= 1.120
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -31,9 +31,29 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Gnome2::Print Perl module allows a Perl developer to use the GNOME
 Printing libraries with Gtk2-perl.
 
+Note: this module is deprecated and no longer maintained.
+
 %description -l pl.UTF-8
 Moduł Perla Gnome2::Print umożliwia programistom perlowym korzystanie
 z bibliotek GNOME Print wraz z Gtk2-perl.
+
+Uwaga: ten moduł jest przestarzały i nie jest już utrzymywany.
+
+%package devel
+Summary:	Development files for Perl Gnome2-Print bindings
+Summary(pl.UTF-8):	Pliki programistyczne wiązań Gnome2-Print dla Perla
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}-%{release}
+Requires:	libgnomeprintui-devel >= 2.2.0
+Requires:	perl-Cairo-devel
+Requires:	perl-Glib-devel >= 1.120
+Requires:	perl-Gtk2-devel >= 1.120
+
+%description devel
+Development files for Perl Gnome2-Print bindings.
+
+%description devel -l pl.UTF-8
+Pliki programistyczne wiązań Gnome2-Print dla Perla.
 
 %prep
 %setup -q -n %{pnam}-%{version}
@@ -54,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Print/{,*/}*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Print/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -66,7 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gnome2/Print
 %{perl_vendorarch}/Gnome2/Print/Config
 %{perl_vendorarch}/Gnome2/Print/Font
-%{perl_vendorarch}/Gnome2/Print/Install
 %dir %{perl_vendorarch}/auto/Gnome2/Print
-%attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Print/*.so
-%{_mandir}/man3/*
+%attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Print/Print.so
+%{_mandir}/man3/Gnome2::Print*.3pm*
+
+%files devel
+%defattr(644,root,root,755)
+%{perl_vendorarch}/Gnome2/Print/Install

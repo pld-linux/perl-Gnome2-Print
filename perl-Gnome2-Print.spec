@@ -12,6 +12,7 @@ License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	67ae821c4b7cb9046513a3944cd37e9b
+Patch0:		perl-5.36.patch
 URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	libgnomeprintui-devel >= 2.2.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.1
@@ -57,6 +58,7 @@ Pliki programistyczne wiązań Gnome2-Print dla Perla.
 
 %prep
 %setup -q -n %{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \

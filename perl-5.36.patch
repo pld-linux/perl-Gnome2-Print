@@ -1,0 +1,11 @@
+--- Gnome2-Print-1.001/xs/GnomePrintConfig.xs.orig	2011-11-27 08:57:10.000000000 +0100
++++ Gnome2-Print-1.001/xs/GnomePrintConfig.xs	2022-08-23 11:38:41.636611870 +0200
+@@ -153,7 +153,7 @@
+ 			gdouble value;
+ 			if (! gnome_print_config_get_double (config, key, &value))
+ 				XSRETURN_UNDEF;
+-			EXTEND (SP, 1),
++			EXTEND (SP, 1);
+ 			PUSHs (sv_2mortal (newSVnv (value)));
+ 			break;
+ 		}

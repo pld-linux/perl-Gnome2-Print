@@ -7,7 +7,7 @@ Summary:	Perl interface to the GNOME Print libraries
 Summary(pl.UTF-8):	Interfejs perlowy do bibliotek GNOME Print
 Name:		perl-Gnome2-Print
 Version:	1.001
-Release:	3
+Release:	4
 License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz

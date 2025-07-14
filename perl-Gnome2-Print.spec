@@ -58,7 +58,7 @@ Pliki programistyczne wiązań Gnome2-Print dla Perla.
 
 %prep
 %setup -q -n %{pnam}-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__perl} Makefile.PL \
